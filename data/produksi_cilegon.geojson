@@ -1,0 +1,246 @@
+{
+  "type": "FeatureCollection",
+  "name": "Produksi_Perikanan_Cilegon",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Ciwandan",
+        "tipe": "Tangkap",
+        "produksi_ton": 780,
+        "luas_km2": 25.6,
+        "ikan_dominan": "Kembung",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-6.02, 106.15], [106.02, -6.05], [106.05, -6.03], [105.98, -6.02]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Ciwandan",
+        "tipe": "Budidaya",
+        "produksi_ton": 420,
+        "luas_km2": 25.6,
+        "ikan_dominan": "Bandeng",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[105.98, -6.02], [106.02, -6.05], [106.05, -6.03], [105.98, -6.02]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Citangkil",
+        "tipe": "Tangkap",
+        "produksi_ton": 520,
+        "luas_km2": 21.4,
+        "ikan_dominan": "Teri",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.05, -6.02], [106.09, -6.06], [106.12, -6.04], [106.05, -6.02]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Citangkil",
+        "tipe": "Budidaya",
+        "produksi_ton": 300,
+        "luas_km2": 21.4,
+        "ikan_dominan": "Lele",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.05, -6.02], [106.09, -6.06], [106.12, -6.04], [106.05, -6.02]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Pulomerak",
+        "tipe": "Tangkap",
+        "produksi_ton": 890,
+        "luas_km2": 19.8,
+        "ikan_dominan": "Tongkol",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[105.94, -5.96], [105.99, -6.00], [106.01, -5.97], [105.94, -5.96]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Pulomerak",
+        "tipe": "Budidaya",
+        "produksi_ton": 260,
+        "luas_km2": 19.8,
+        "ikan_dominan": "Nila",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[105.94, -5.96], [105.99, -6.00], [106.01, -5.97], [105.94, -5.96]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Grogol",
+        "tipe": "Tangkap",
+        "produksi_ton": 450,
+        "luas_km2": 27.9,
+        "ikan_dominan": "Tenggiri",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.10, -6.05], [106.14, -6.08], [106.16, -6.06], [106.10, -6.05]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Grogol",
+        "tipe": "Budidaya",
+        "produksi_ton": 310,
+        "luas_km2": 27.9,
+        "ikan_dominan": "Gurame",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.10, -6.05], [106.14, -6.08], [106.16, -6.06], [106.10, -6.05]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Purwakarta",
+        "tipe": "Tangkap",
+        "produksi_ton": 610,
+        "luas_km2": 32.5,
+        "ikan_dominan": "Kakap",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.09, -6.04], [106.12, -6.08], [106.15, -6.05], [106.09, -6.04]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Purwakarta",
+        "tipe": "Budidaya",
+        "produksi_ton": 390,
+        "luas_km2": 32.5,
+        "ikan_dominan": "Patin",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.09, -6.04], [106.12, -6.08], [106.15, -6.05], [106.09, -6.04]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Cilegon",
+        "tipe": "Tangkap",
+        "produksi_ton": 480,
+        "luas_km2": 22.3,
+        "ikan_dominan": "Tuna Sirip Kuning",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.06, -6.03], [106.09, -6.07], [106.11, -6.05], [106.06, -6.03]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Cilegon",
+        "tipe": "Budidaya",
+        "produksi_ton": 310,
+        "luas_km2": 22.3,
+        "ikan_dominan": "Lele Dumbo",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.06, -6.03], [106.09, -6.07], [106.11, -6.05], [106.06, -6.03]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Jombang",
+        "tipe": "Tangkap",
+        "produksi_ton": 370,
+        "luas_km2": 20.7,
+        "ikan_dominan": "Cakalang",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.08, -6.08], [106.12, -6.10], [106.14, -6.08], [106.08, -6.08]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Jombang",
+        "tipe": "Budidaya",
+        "produksi_ton": 290,
+        "luas_km2": 20.7,
+        "ikan_dominan": "Mas",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.08, -6.08], [106.12, -6.10], [106.14, -6.08], [106.08, -6.08]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Cibeber",
+        "tipe": "Tangkap",
+        "produksi_ton": 350,
+        "luas_km2": 30.4,
+        "ikan_dominan": "Teri Laut",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.10, -6.10], [106.14, -6.12], [106.16, -6.09], [106.10, -6.10]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_kecamatan": "Cibeber",
+        "tipe": "Budidaya",
+        "produksi_ton": 330,
+        "luas_km2": 30.4,
+        "ikan_dominan": "Nila Merah",
+        "tahun": 2024
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.10, -6.10], [106.14, -6.12], [106.16, -6.09], [106.10, -6.10]]]
+      }
+    }
+  ]
+}

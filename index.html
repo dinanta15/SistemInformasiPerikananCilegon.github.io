@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIPC | Sistem Informasi Perikanan Cilegon</title>
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <!-- Navigasi -->
+    <nav>
+      <div class="layar-dalam">
+        <div class="logo">
+          <a href="index.html"><img src="asset/logo-white.png" class="putih" /></a>
+        </div>
+        <div class="menu">
+          <a href="#" class="tombol-menu">
+            <span class="garis"></span><span class="garis"></span><span class="garis"></span>
+          </a>
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="data.html">Data</a></li>
+            <li><a href="statistik.html">Statistik</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home">
+      <div class="overlay"></div>
+      <video autoplay muted loop>
+        <source src="asset/video-indonesia.mp4" type="video/mp4" />
+      </video>
+      <div class="intro">
+        <h3>Sistem Informasi Perikanan Cilegon (SIPC)</h3>
+        <p>Data dan Informasi Laut untuk Keberlanjutan Perikanan Kota Cilegon</p>
+        <p><a href="about.html" class="tombol">Pelajari Lebih Lanjut</a></p>
+      </div>
+    </header>
+
+  <!-- Statistik Singkat -->
+<section id="data" class="abuabu">
+  <div class="layar-dalam support">
+    <div class="card">
+      <img src="asset/Fisher.png" alt="Produksi Ikan Tangkap" />
+      <h6>Produksi Ikan Tangkap 2024</h6>
+      <p><strong>236,261 Ton</strong></p>
+      <div class="card-links">
+        <a href="file/Produksi Perikanan Tangkap Kota Cilegon.xlsx" target="_blank" class="btn">📊 Unduh Data</a>
+        <p>Sumber: Badan Pusat Statistik Kota Cilegon</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/2.png" alt="Produksi Ikan Budidaya" />
+      <h6>Produksi Ikan Budidaya 2024</h6>
+      <p><strong>361,747 Ton</strong></p>
+      <div class="card-links">
+        <a href="file/Produksi Perikanan Budidaya Kota Cilegon.xlsx" target="_blank" class="btn">📊 Unduh Data</a>
+        <p>Sumber: Badan Pusat Statistik Kota Cilegon</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="asset/Fishing Zone.png" alt="Jumlah Nelayan" />
+      <h6>Nelayan 2025</h6>
+      <p><strong>785 Orang</strong></p>
+      <div class="card-links">
+        <a href="file/nelayan_2025.xlsx" target="_blank" class="btn">📊 Unduh Data</a>
+        <a href="https://rri.co.id/daerah/1784989/hnsi-dorong-pemerintah-perkuat-kesejahteraan-nelayan-kota-cilegon" target="_blank" class="info-link">ℹ️ Info lebih lanjut</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section id="informasi-cilegon" class="info-section">
+  <div class="container">
+    <h2>🌊 Informasi Kota Cilegon</h2>
+    <div class="info-grid">
+      <div class="info-text">
+        <p>
+          Kota Cilegon terletak di ujung barat Pulau Jawa, berbatasan langsung dengan Selat Sunda. 
+          Secara administratif, Cilegon terdiri dari <strong>8 kecamatan</strong> dan <strong>43 kelurahan</strong> 
+          dengan luas wilayah sekitar <strong>175,5 km²</strong>. Kota ini merupakan pusat industri sekaligus kawasan pesisir 
+          yang memiliki potensi kelautan dan perikanan yang cukup besar.
+        </p>
+        <p>
+          Kondisi perairan di sekitar Cilegon dipengaruhi oleh arus Selat Sunda, dengan karakteristik 
+          laut yang tenang di sisi barat dan perairan lebih terbuka di timur. 
+          Ekosistem pesisir didominasi oleh pantai berpasir, hutan mangrove, dan padang lamun yang menjadi habitat 
+          penting bagi ikan, udang, serta biota laut lainnya.
+        </p>
+        <p>
+          Suhu permukaan laut (SPL) di wilayah ini rata-rata berkisar antara <strong>28–30°C</strong> 
+          dan konsentrasi klorofil-a sekitar <strong>1–2 mg/m³</strong>, menandakan tingkat kesuburan laut 
+          yang mendukung aktivitas perikanan tangkap dan budidaya.
+        </p>
+        <p>
+          Pesisir Cilegon juga menghadapi tantangan lingkungan seperti abrasi, sedimentasi, 
+          dan tekanan dari aktivitas industri pesisir. Oleh karena itu, 
+          pengelolaan wilayah pesisir berkelanjutan menjadi prioritas penting dalam mendukung 
+          ketahanan pangan dan ekonomi nelayan lokal.
+        </p>
+      </div>
+      <div class="info-map">
+        <img src="asset/peta-administrasi-cilegon.jpg" alt="Peta Administrasi Kota Cilegon">
+        <p class="map-caption">Gambar: Peta Administrasi Kota Cilegon</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pendaratan-ikan" class="landing-section">
+  <div class="container">
+    <h2>⚓ Lokasi Pendaratan Ikan</h2>
+    <p>
+      Aktivitas pendaratan ikan di Kota Cilegon terpusat di beberapa titik penting, 
+      di antaranya:
+    </p>
+    <ul>
+      <li><strong>TPI Pangsoran Bojonegara</strong> — Terletak di perbatasan Cilegon dan Serang, tempat ini menjadi lokasi para nelayan lokal mendaratkan hasil tangkapan mereka..</li>
+      <li><strong>Kecamatan Pulomerak</strong> — Menurut data dari Badan Pusat Statistik, Pulomerak adalah kecamatan dengan pendaratan ikan terbesar di Cilegon. Hal ini tidak mengherankan karena Pulomerak memiliki wilayah pesisir yang strategis dan merupakan daerah kegiatan perikanan yang aktif.</li>
+      <li><strong>Pasar Ikan Merak</strong> — Area tradisional untuk nelayan kecil, terutama penangkapan ikan kembung dan tongkol.</li>
+    </ul>
+    <p>
+      Dengan adanya lokasi-lokasi tersebut, Cilegon menjadi salah satu daerah penting dalam sektor perikanan tangkap di Banten, meskipun aktivitasnya sering kali bersinggungan dengan kawasan industri yang semakin berkembang., dan data hasil tangkapan sebagai bagian dari 
+      pengembangan <strong>Sistem Informasi Perikanan Kota Cilegon (SIPC)</strong>.
+    </p>
+  </div>
+</section>
+
+
+    <!-- Peta Interaktif -->
+ <section id="peta">
+    <div class="layar-dalam">
+      <h3>Peta Zona Potensi Ikan</h3>
+      <p class="ringkasan">Pantau kondisi laut dan area tangkap unggulan di perairan Cilegon</p>
+      <div class="konten-isi">
+        <div id="map"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+    <!-- Font Awesome (ikon layer) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+  /> 
+
+ <script>
+  // ------------------ INISIALISASI PETA ------------------
+  const map = L.map('map', { zoomControl: true }).setView([-5.879, 105.88], 10);
+
+  // Basemap
+  const base = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // ------------------ POLIGON WILAYAH SELATAN SUNDA (UTARA) ------------------
+  const wilayahSundaUtara = L.polygon([
+    [-5.66, 105.81],
+    [-5.82, 106.24],
+    [-6.17, 106.10],
+    [-5.99, 105.68]
+  ], {
+    color: '#0077b6',
+    fillColor: '#0096c7',
+    fillOpacity: 0.25,
+    weight: 2
+  }).addTo(map);
+
+  // ------------------ DATA POPUP BERDASARKAN MUSIM ------------------
+  const popupData = {
+    barat: `
+      <b>Musim Barat (Des–Feb)</b><br>
+      
+      🌊 Gelombang: 1.0–2.5 m<br>
+      ☁️ Cuaca: Hujan ringan – berawan<br>
+      🧪 Klorofil-a: 1.8–3.0 mg/m³ (tinggi)<br>
+      🌡️ SPL: 27–29°C<br>
+      <hr>
+      Potensi tinggi di sisi timur dan teluk terlindung.
+    `,
+    timur: `
+      <b>Musim Timur (Jun–Agu)</b><br>
+      
+      🌊 Gelombang: 0.5–1.2 m<br>
+      ☀️ Cuaca: Cerah dominan<br>
+      🧪 Klorofil-a: 0.5–1.0 mg/m³ (rendah)<br>
+      🌡️ SPL: 29–31°C<br>
+      <hr>
+      Produktivitas naik di barat (PLTU Suralaya), turun di tengah Teluk.
+    `,
+    peralihan1: `
+      <b>Musim Peralihan I (Mar–Apr)</b><br>
+      
+      🌊 Gelombang: 0.5–1.0 m<br>
+      🌤️ Cuaca: Cerah berawan<br>
+      🧪 Klorofil-a: 1.2–2.2 mg/m³<br>
+      🌡️ SPL: 28–30°C<br>
+      <hr>
+      Kondisi stabil dan potensi tangkapan merata.
+    `,
+    peralihan2: `
+      <b>Musim Peralihan II (Sep–Okt)</b><br>
+      
+      🌊 Gelombang: 0.5–1.3 m<br>
+      🌦️ Cuaca: Cerah–hujan ringan<br>
+      🧪 Klorofil-a: 2.0–3.5 mg/m³<br>
+      🌡️ SPL: 27–28°C<br>
+      <hr>
+      Produktivitas meningkat di tengah dan utara Teluk.
+    `
+  };
+
+  // ------------------ ZONA POTENSIAL PENANGKAPAN IKAN ------------------
+  const musimBarat = L.layerGroup([
+    L.circleMarker([-5.853, 106.007], { color: '#1f77b4', radius: 7 }).bindPopup("<b>Musim Barat</b><br>Zona 1 - Potensi tinggi"),
+    L.circleMarker([-5.879, 105.941], { color: '#1f77b4', radius: 7 }).bindPopup("<b>Musim Barat</b><br>Zona 2 - Potensi sedang"),
+    L.circleMarker([-5.752, 105.940], { color: '#1f77b4', radius: 7 }).bindPopup("<b>Musim Barat</b><br>Zona 3 - Potensi tinggi"),
+    L.circleMarker([-5.795, 105.959], { color: '#1f77b4', radius: 7 }).bindPopup("<b>Musim Barat</b><br>Zona 4 - Potensi sedang"),
+    L.circleMarker([-5.897, 105.984], { color: '#1f77b4', radius: 7 }).bindPopup("<b>Musim Barat</b><br>Zona 5 - Potensi tinggi"),
+    L.circleMarker([-5.843, 105.923], { color: '#1f77b4', radius: 7 }).bindPopup("<b>Musim Barat</b><br>Zona 6 - Potensi rendah"),
+    L.circleMarker([-5.808, 105.910], { color: '#1f77b4', radius: 7 }).bindPopup("<b>Musim Barat</b><br>Zona 7 - Potensi tinggi"),
+    L.circleMarker([-5.839, 105.952], { color: '#1f77b4', radius: 7 }).bindPopup("<b>Musim Barat</b><br>Zona 8 - Potensi sedang"),
+    L.circleMarker([-5.868, 105.981], { color: '#1f77b4', radius: 7 }).bindPopup("<b>Musim Barat</b><br>Zona 9 - Potensi tinggi"),
+
+  ]);
+
+  const musimTimur = L.layerGroup([
+     L.circleMarker([-5.880, 106.114], { color: '#d62728', radius: 7 }).bindPopup("<b>Musim Timur</b><br>Zona 1 - Potensi tinggi"),
+    L.circleMarker([-5.864, 106.091], { color: '#d62728', radius: 7 }).bindPopup("<b>Musim Timur</b><br>Zona 2 - Potensi sedang"),
+    L.circleMarker([-5.847, 106.121], { color: '#d62728', radius: 7 }).bindPopup("<b>Musim Timur</b><br>Zona 3 - Potensi tinggi"),
+    L.circleMarker([-5.813, 106.111], { color: '#d62728', radius: 7 }).bindPopup("<b>Musim Timur</b><br>Zona 4 - Potensi rendah"),
+    L.circleMarker([-5.799, 106.086], { color: '#d62728', radius: 7 }).bindPopup("<b>Musim Timur</b><br>Zona 5 - Potensi sedang"),
+    L.circleMarker([-5.813, 106.058], { color: '#d62728', radius: 7 }).bindPopup("<b>Musim Timur</b><br>Zona 6 - Potensi tinggi"),
+    L.circleMarker([-5.819, 106.187], { color: '#d62728', radius: 7 }).bindPopup("<b>Musim Timur</b><br>Zona 7 - Potensi tinggi"),
+    L.circleMarker([-5.863, 106.162], { color: '#d62728', radius: 7 }).bindPopup("<b>Musim Timur</b><br>Zona 1 - Potensi tinggi"),
+  ]);
+
+  const peralihan1 = L.layerGroup([
+    L.circleMarker([-5.856, 105.982], { color: '#2ca02c', radius: 7 }).bindPopup("<b>Peralihan I</b><br>Zona 1 - Potensi sedang"),
+    L.circleMarker([-5.823, 105.916], { color: '#2ca02c', radius: 7 }).bindPopup("<b>Peralihan I</b><br>Zona 2 - Potensi tinggi"),
+    L.circleMarker([-5.842, 106.017], { color: '#2ca02c', radius: 7 }).bindPopup("<b>Peralihan I</b><br>Zona 3 - Potensi tinggi"),
+    L.circleMarker([-5.865, 106.088], { color: '#2ca02c', radius: 7 }).bindPopup("<b>Peralihan I</b><br>Zona 4 - Potensi sedang"),
+    L.circleMarker([-5.781, 106.039], { color: '#2ca02c', radius: 7 }).bindPopup("<b>Peralihan I</b><br>Zona 5 - Potensi tinggi"),
+    L.circleMarker([-5.813, 106.058], { color: '#2ca02c', radius: 7 }).bindPopup("<b>Peralihan I</b><br>Zona 6 - Potensi tinggi"),
+    L.circleMarker([-5.819, 106.187], { color: '#2ca02c', radius: 7 }).bindPopup("<b>Peralihan I</b><br>Zona 7 - Potensi tinggi"),
+    L.circleMarker([-5.863, 106.162], { color: '#2ca02c', radius: 7 }).bindPopup("<b>Peralihan I</b><br>Zona 8 - Potensi tinggi"),
+  ]);
+
+  const peralihan2 = L.layerGroup([
+    L.circleMarker([-5.782, 105.983], { color: '#ff7f0e', radius: 7 }).bindPopup("<b>Peralihan II</b><br>Zona 1 - Potensi tinggi"),
+    L.circleMarker([-5.737, 105.972], { color: '#ff7f0e', radius: 7 }).bindPopup("<b>Peralihan II</b><br>Zona 2 - Potensi sangat tinggi"),
+    L.circleMarker([-5.853, 106.039], { color: '#ff7f0e', radius: 7 }).bindPopup("<b>Peralihan II</b><br>Zona 3 - Potensi tinggi"),
+    L.circleMarker([-5.849, 106.003], { color: '#ff7f0e', radius: 7 }).bindPopup("<b>Peralihan II</b><br>Zona 4 - Potensi sedang"),
+    L.circleMarker([-5.799, 105.933], { color: '#ff7f0e', radius: 7 }).bindPopup("<b>Peralihan II</b><br>Zona 5 - Potensi tinggi"),
+    L.circleMarker([-5.817, 105.913], { color: '#ff7f0e', radius: 7 }).bindPopup("<b>Peralihan II</b><br>Zona 6 - Potensi tinggi"),
+    L.circleMarker([-5.815, 106.032], { color: '#ff7f0e', radius: 7 }).bindPopup("<b>Peralihan II</b><br>Zona 7 - Potensi tinggi"),
+    L.circleMarker([-5.758, 106.046], { color: '#ff7f0e', radius: 7 }).bindPopup("<b>Peralihan II</b><br>Zona 8 - Potensi tinggi"),
+  ]);
+
+  // ------------------ DEFAULT: MUSIM BARAT ------------------
+  musimBarat.addTo(map);
+  updatePopup("barat");
+
+  // ------------------ PANEL PILIH MUSIM ------------------
+  const LayerToggle = L.Control.extend({
+    options: { position: 'topright' },
+    onAdd: function () {
+      const container = L.DomUtil.create('div', 'layer-toggle-btn');
+      container.innerHTML = '<i class="fa-solid fa-layer-group"></i>';
+      L.DomEvent.disableClickPropagation(container);
+      L.DomEvent.on(container, 'click', function () {
+        const panel = map.getContainer().querySelector('.layer-panel');
+        if (panel) panel.classList.toggle('active');
+      });
+      return container;
+    }
+  });
+  map.addControl(new LayerToggle());
+
+  const panel = L.DomUtil.create('div', 'layer-panel');
+  panel.innerHTML = `
+    <h4><i class="fa-solid fa-water"></i> Pilih Musim</h4>
+    <button id="opt-barat" class="layer-option active"><span class="dot" style="background:#1f77b4"></span>Musim Barat</button>
+    <button id="opt-timur" class="layer-option"><span class="dot" style="background:#d62728"></span>Musim Timur</button>
+    <button id="opt-peralihan1" class="layer-option"><span class="dot" style="background:#2ca02c"></span>Peralihan I</button>
+    <button id="opt-peralihan2" class="layer-option"><span class="dot" style="background:#ff7f0e"></span>Peralihan II</button>
+  `;
+  map.getContainer().appendChild(panel);
+  L.DomEvent.disableClickPropagation(panel);
+
+  // ------------------ FUNGSI GANTI MUSIM ------------------
+  function showMusim(activeLayer, activeId, musimKey) {
+    [musimBarat, musimTimur, peralihan1, peralihan2].forEach(l => map.removeLayer(l));
+    activeLayer.addTo(map);
+    updatePopup(musimKey);
+    panel.querySelectorAll('.layer-option').forEach(b => b.classList.remove('active'));
+    panel.querySelector('#' + activeId).classList.add('active');
+    panel.classList.remove('active');
+  }
+
+  panel.querySelector('#opt-barat').addEventListener('click', () => showMusim(musimBarat, 'opt-barat', 'barat'));
+  panel.querySelector('#opt-timur').addEventListener('click', () => showMusim(musimTimur, 'opt-timur', 'timur'));
+  panel.querySelector('#opt-peralihan1').addEventListener('click', () => showMusim(peralihan1, 'opt-peralihan1', 'peralihan1'));
+  panel.querySelector('#opt-peralihan2').addEventListener('click', () => showMusim(peralihan2, 'opt-peralihan2', 'peralihan2'));
+
+  // ------------------ LEGEND MINI ------------------
+  const legend = L.DomUtil.create('div', 'legend-mini');
+  legend.innerHTML = `
+    <div><span class="dot" style="background:#1f77b4"></span>Musim Barat</div>
+    <div><span class="dot" style="background:#d62728"></span>Musim Timur</div>
+    <div><span class="dot" style="background:#2ca02c"></span>Peralihan I</div>
+    <div><span class="dot" style="background:#ff7f0e"></span>Peralihan II</div>
+  `;
+  map.getContainer().appendChild(legend);
+  L.DomEvent.disableClickPropagation(legend);
+
+  // ------------------ UPDATE POPUP POLIGON ------------------
+  function updatePopup(musim) {
+    wilayahSundaUtara.bindPopup(`
+      <b>Wilayah: Perairan Selatan Sunda Bagian Utara (Teluk Banten)</b><br><hr>
+      ${popupData[musim]}
+    `);
+  }
+</script>
+
+
+
+
+<!-- Galeri UMKM Hasil Kelautan Cilegon -->
+<!-- Judul Galeri -->
+<h3 class="judul-galeri">Hasil Olahan Produk Kelautan Wilayah Cilegon</h3>
+<section id="gallery" class="umkm-gallery">
+
+  <!-- Abon Ikan Cakalang Pedas – Dapur Sehati -->
+  <div class="umkm-item">
+    <img src="asset/cakalang.png" alt="Abon Ikan Cakalang Pedas Dapur Sehati" />
+    <h3>Abon Ikan Cakalang Pedas – Dapur Sehati</h3>
+    <p>
+      Abon premium berbahan dasar ikan cakalang segar dengan bumbu pedas khas.
+      Diproduksi oleh UMKM Dapur Sehati, produk ini terkenal sebagai oleh-oleh
+      khas Cilegon dengan cita rasa gurih, pedas, dan tahan lama karena 
+      proses pengolahan higienis.
+    </p>
+  </div>
+
+  <!-- Abon Ikan Lele – Mae Shetie -->
+  <div class="umkm-item">
+    <img src="asset/lele.jpeg" alt="Abon Ikan Lele Mae Shetie" />
+    <h3>Abon Ikan Lele – Mae Shetie</h3>
+    <p>
+      UKM Mae Shetie berlokasi di Kota Cilegon (kecamatan Citangkil dan Pulomerak) dan bergerak dalam bidang pengolahan ikan lele (Clarias sp) menjadi abon. Studi kasus dalam jurnal agribisnis menyebut UKM ini sebagai salah satu usaha olahan lele di wilayah Cilegon.
+    </p>
+  </div>
+
+  <!-- Kerupuk Ikan Khas Ibu Ramai -->
+  <div class="umkm-item">
+    <img src="asset/kerupuk.jpg" alt="Kerupuk Ikan Khas Ibu Ramai" />
+    <h3>Kerupuk Ikan – Ibu Ramai</h3>
+    <p>
+      Kerupuk ikan lokal yang diproduksi oleh Ibu Ramai, UMKM terdaftar dalam
+      platform SiPensi. Kerupuk dibuat dari campuran daging ikan segar 
+      sehingga memiliki aroma gurih khas laut dan cocok untuk camilan
+      maupun pelengkap hidangan.
+    </p>
+  </div>
+
+  <!-- Dodol Rumput Laut -->
+  <div class="umkm-item">
+    <img src="asset/pes-dodolrumputlautb_1.jpg" alt="Dodol Rumput Laut" />
+    <h3>Dodol Rumput Laut</h3>
+    <p>
+      Dodol berbahan dasar rumput laut yang diolah dari rumput laut segar berkualitas.
+      Teksturnya kenyal, rasa manis alami, dan populer sebagai jajanan sehat.
+      Produk ini menjadi salah satu UMKM unggulan yang memanfaatkan hasil laut berasal dari “IUMK Koperasi – Cilegon.
+    </p>
+  </div>
+
+</section>
+
+
+    <!-- Footer -->
+    <footer id="kontak">
+      <div class="layar-dalam">
+        <div>
+          <h5>Kontak</h5>
+          Tim Developer & Data Analyst<br />
+          Jalan Ki Mas Jong No. 5, Kelurahan Kotabaru, Kecamatan/Kabupaten Serang, Jawa Barat.<br />
+          Email:SIPC.Cilegon@gmail.com
+        </div>
+        <div>
+          <h5>Tentang</h5>
+          SIPC menyediakan informasi perikanan tangkap dan data kelautan untuk mendukung keberlanjutan sumber daya laut.
+        </div>
+         <div>
+          <h5>Pengembang</h5>
+          Universitas Pendidikan Indonesia – Sistem Informasi Kelautan
+        </div>
+      </div>
+      <div class="layar-dalam">
+        <div class="copyright">&copy; 2025 SIPC - Sistem Informasi Perikanan Cilegon</div>
+      </div>
+    </footer>
+
+  </body>
+</html>

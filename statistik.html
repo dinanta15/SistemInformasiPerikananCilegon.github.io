@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Statistik Ekonomi Maritim Indonesia</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Leaflet.js -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body>
+  <!-- Navigasi -->
+  <nav>
+    <div class="layar-dalam">
+      <div class="logo">
+        <a href="index.html"><img src="asset/logo-white.png" class="putih" /></a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="statistik.html" class="active">Statistik</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+<header id="home" style="position: relative; height: 100vh; overflow: hidden;">
+  <!-- Gambar Latar -->
+  <img src="asset/sta.jpg" 
+       alt="Pemandangan Laut Kota Cilegon" 
+       style="width: 100%; height: 100%; object-fit: cover;">
+
+  <!-- Overlay -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  "></div>
+
+  <!-- Teks Intro -->
+  <div class="intro" style="
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;">
+    <h3 style="font-size: 2rem; font-weight: bold; margin-bottom: 10px;">
+      🌊 Statistik Ekonomi Maritim Indonesia
+    </h3>
+    <p style="font-size: 1.1rem;">
+      Potret ekonomi biru Indonesia — dari nilai produksi, ekspor hasil laut, hingga indeks keberlanjutan per provinsi.
+    </p>
+  </div>
+</header>
+
+  <main>
+    <!-- A. Gambaran Umum -->
+    <section id="overview">
+      <h2>Gambaran Umum Nasional (2024)</h2>
+      <div class="stats-container">
+        <div class="stat-box">
+          <h3>Rp 375 Triliun</h3>
+          <p>Kontribusi Sektor Maritim terhadap PDB Nasional</p>
+        </div>
+        <div class="stat-box">
+          <h3>8,2 Juta</h3>
+          <p>Tenaga Kerja di Sektor Maritim</p>
+        </div>
+        <div class="stat-box">
+          <h3>US$ 5,9 Miliar</h3>
+          <p>Nilai Ekspor Hasil Laut Indonesia</p>
+        </div>
+      </div>
+      <p class="deskripsi">
+    Ekonomi maritim Indonesia menunjukkan pertumbuhan positif sepanjang tahun 2024. 
+    Berdasarkan data Kementerian Kelautan dan Perikanan (KKP), kontribusi sektor maritim terhadap 
+    Produk Domestik Bruto (PDB) nasional mencapai <b>Rp 375 triliun</b> atau sekitar 7,6% dari total PDB nasional.
+    Pertumbuhan tertinggi dicapai oleh <b>subsektor perikanan tangkap</b> dan <b>logistik pelabuhan</b> yang didorong oleh 
+    peningkatan ekspor komoditas laut bernilai tinggi seperti <b>udang, tuna, dan rumput laut olahan</b>.
+  </p>
+
+  <p class="deskripsi">
+    Dari sisi ketenagakerjaan, sektor maritim menyerap lebih dari <b>8,2 juta tenaga kerja</b> yang tersebar di seluruh wilayah pesisir Indonesia, 
+    terutama di provinsi Sulawesi Selatan, Jawa Timur, dan Maluku. 
+    Sementara itu, nilai ekspor hasil laut Indonesia mencapai <b>US$ 7,1 miliar</b> dengan pertumbuhan pasar di Asia Timur dan Amerika Utara.
+  </p>
+    </section>
+
+<!-- B. Produksi & Nilai Ekonomi -->
+<section id="produksi">
+  <h2>📊 Produksi & Nilai Ekonomi Perikanan</h2>
+
+  <p class="deskripsi">
+    Sektor <b>perikanan tangkap</b> dan <b>budidaya</b> menjadi fondasi utama ekonomi maritim Indonesia.
+    Dari Sabang hingga Merauke, aktivitas nelayan dan pembudidaya ikan tidak hanya memenuhi kebutuhan pangan nasional,
+    tetapi juga mendorong <b>pertumbuhan ekonomi pesisir</b> dan memperkuat <b>ketahanan pangan laut</b>.
+  </p>
+
+  <p class="deskripsi">
+    Berdasarkan estimasi data tahun <b>2024</b>, <b>Sulawesi Selatan</b> menjadi pusat produksi perikanan terbesar di Indonesia
+    dengan hasil mencapai <b>320 ribu ton</b>. Disusul oleh <b>Jawa Timur</b> dan <b>Aceh</b>, dua wilayah yang memiliki
+    peran strategis dalam rantai pasok ikan segar dan industri pengolahan hasil laut.
+  </p>
+
+  <div class="highlight-box">
+    <h3>🌊 Fakta Menarik 2024</h3>
+    <ul>
+      <li><b>+12,5%</b> kenaikan produksi ikan tangkap nasional dibanding 2023.</li>
+      <li><b>Rp 125 triliun</b> total nilai ekonomi perikanan Indonesia.</li>
+      <li><b>Rumput laut</b> dan <b>udang vaname</b> jadi komoditas ekspor unggulan.</li>
+    </ul>
+  </div>
+
+  <div class="grid-2">
+    <div class="chart-wrapper">
+      <h3>📈 Tren Produksi Perikanan Tangkap & Budidaya (ribu ton)</h3>
+      <canvas id="produksiChart"></canvas>
+    </div>
+
+    <div class="text-info">
+      <p>
+        Aktivitas perikanan kini semakin efisien berkat <b>digitalisasi nelayan</b> dan sistem logistik laut yang terintegrasi.
+        Pemerintah terus mendorong konsep <b>ekonomi biru</b> yang berkelanjutan — mengedepankan keseimbangan antara produksi,
+        konservasi, dan kesejahteraan masyarakat pesisir.
+      </p>
+      <p>
+        Dengan meningkatnya permintaan global terhadap produk laut Indonesia,
+        sektor ini diproyeksikan akan menjadi <b>motor penggerak ekonomi maritim</b> yang lebih tangguh dan inklusif di tahun-tahun mendatang.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- C. Ekspor & Perdagangan Laut -->
+<section id="ekspor">
+  <h2>🌍 Ekspor & Perdagangan Laut Indonesia</h2>
+
+  <p class="deskripsi">
+    Sektor ekspor hasil laut Indonesia terus menunjukkan <b>tren positif dan berkelanjutan</b> dalam lima tahun terakhir.
+    Produk unggulan seperti <b>udang vaname</b>, <b>tuna sirip kuning</b>, dan <b>rumput laut olahan</b> mendominasi ekspor ke berbagai negara,
+    memperkuat posisi Indonesia sebagai <b>pemain utama ekonomi maritim Asia Tenggara</b>.
+  </p>
+
+  <p class="deskripsi">
+    Sepanjang tahun <b>2024</b>, nilai ekspor hasil laut nasional mencapai sekitar <b>US$ 5,9 miliar</b>,
+    tumbuh stabil meski di tengah dinamika global. Pasar ekspor utama didominasi oleh negara-negara dengan standar mutu tinggi,
+    menandakan meningkatnya kepercayaan dunia terhadap <b>produk laut Indonesia yang berkelanjutan dan bersertifikat</b>.
+  </p>
+
+
+    <div class="export-info">
+      <h3>🌐 Lima Negara Tujuan Ekspor Terbesar (2024)</h3>
+      <ul class="top-list">
+        <li>🇯🇵 <b>Jepang</b> – 25% dari total ekspor, unggul pada komoditas tuna premium.</li>
+        <li>🇺🇸 <b>Amerika Serikat</b> – 20%, fokus pada produk udang beku dan fillet ikan olahan.</li>
+        <li>🇨🇳 <b>Tiongkok</b> – 18%, pasar utama untuk rumput laut kering dan hasil budidaya.</li>
+        <li>🇪🇺 <b>Uni Eropa</b> – 15%, menekankan ekspor berkelanjutan dan traceability produk.</li>
+        <li>🇰🇷 <b>Korea Selatan</b> – 10%, permintaan tinggi untuk cumi-cumi dan gurita.</li>
+      </ul>
+      <p class="highlight-text">
+        🌏 Dengan semakin kuatnya penerapan <b>sertifikasi eco-fishery</b> dan ekspor digital berbasis blockchain,
+        Indonesia berpotensi memperluas pangsa pasar hingga Eropa Timur dan Amerika Selatan pada tahun-tahun mendatang.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- 🌊 D. Indeks Ekonomi Biru -->
+<section id="indeks" style="background:#f5fbff; padding:60px 20px; border-radius:16px; text-align:center;">
+  <div style="max-width:950px; margin:auto;">
+    <h2 style="
+      color:#023e8a;
+      font-weight:700;
+      font-size:1.9em;
+      margin-bottom:10px;
+    ">
+      🌊 Indeks Ekonomi Biru per Provinsi
+    </h2>
+
+    <p class="deskripsi" style="
+      max-width:850px;
+      margin:auto;
+      line-height:1.8;
+      color:#333;
+      font-size:1.05em;
+      margin-bottom:25px;
+    ">
+      <b>Indeks Ekonomi Biru</b> menggambarkan kemampuan provinsi-provinsi di Indonesia dalam menyeimbangkan
+      <b>pertumbuhan ekonomi kelautan</b> dengan <b>kelestarian ekosistem pesisir</b>.<br><br>
+      Berdasarkan data simulasi tahun <b>2024</b>, <b>Jawa Timur (82,3)</b> dan <b>Nusa Tenggara Barat (80,1)</b> menempati posisi tertinggi,
+      berkat penerapan <em>perikanan ramah lingkungan</em>, efisiensi rantai pasok, serta digitalisasi nelayan.<br><br>
+      Sementara itu, <b>Papua (63,5)</b> dan <b>Kalimantan Timur (65,2)</b> masih memperkuat tata kelola laut berkelanjutan
+      melalui <b>program konservasi</b> dan <b>pemberdayaan masyarakat pesisir</b>.
+    </p>
+
+    <div class="chart-container" style="
+      position: relative;
+      height:420px;
+      width:100%;
+      background:#e7f5ff;
+      padding:25px;
+      border-radius:20px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    ">
+      <canvas id="indeksChart"></canvas>
+    </div>
+  </div>
+</section>
+
+
+<!-- 🌊 E. Peta Interaktif -->
+<section id="petaPeta" style="background:#f8fcff; padding:50px 0;">
+  <div class="layar-dalam" style="max-width:1100px; margin:auto; text-align:center;">
+    
+    <h2 style="
+      color:#023e8a;
+      font-weight:700;
+      margin-bottom:10px;
+      font-size:1.8em;
+    ">
+      🌏 Peta Produksi Perikanan Nasional per WPP
+    </h2>
+    
+    <p class="ringkasan" style="
+      font-size:1.05em;
+      color:#333;
+      line-height:1.7;
+      max-width:850px;
+      margin:auto;
+      margin-bottom:25px;
+    ">
+      Peta berikut menampilkan <b>volume produksi perikanan</b> di berbagai <b>WPP Indonesia</b> tahun <b>2024</b> berdasarkan data resmi <b>KKP</b>.<br>
+    </p>
+
+    <div class="konten-isi" style="margin-top:25px;">
+      <div id="mapPeta" style="
+        height:550px;
+        border-radius:16px;
+        box-shadow:0 6px 16px rgba(0,0,0,0.15);
+        margin:auto;
+      "></div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+
+  <script>
+    // === Grafik Tren ===
+    new Chart(document.getElementById('trendChart'), {
+      type: 'line',
+      data: {
+        labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
+        datasets: [{
+          label: 'Pertumbuhan Ekonomi Maritim (%)',
+          data: [4.2, 3.8, 5.1, 6.2, 6.8, 7.4],
+          borderColor: '#0077b6',
+          tension: 0.3,
+          fill: false
+        }]
+      }
+    });
+
+    // === Produksi Perikanan ===
+    new Chart(document.getElementById('produksiChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Aceh', 'NTB', 'Sulsel', 'Jatim', 'Papua'],
+        datasets: [
+          { label: 'Tangkap (ribu ton)', data: [250, 180, 320, 290, 200], backgroundColor: '#00b4d8' },
+          { label: 'Budidaya (ribu ton)', data: [180, 150, 270, 210, 180], backgroundColor: '#90e0ef' }
+        ]
+      },
+      options: { responsive: true, scales: { y: { beginAtZero: true } } }
+    });
+
+    // === Indeks Ekonomi Biru ===
+
+  const ctxIndeks = document.getElementById('indeksChart').getContext('2d');
+  new Chart(ctxIndeks, {
+    type: 'bar',
+    data: {
+      labels: ['Jawa Timur', 'NTB', 'Sulawesi Selatan', 'Aceh', 'Kalimantan Timur', 'Papua'],
+      datasets: [{
+        label: 'Skor Indeks Ekonomi Biru',
+        data: [82.3, 80.1, 77.4, 72.9, 65.2, 63.5],
+        backgroundColor: [
+          'rgba(0, 119, 182, 0.8)',
+          'rgba(0, 180, 216, 0.8)',
+          'rgba(72, 202, 228, 0.8)',
+          'rgba(144, 224, 239, 0.8)',
+          'rgba(173, 232, 244, 0.8)',
+          'rgba(202, 240, 248, 0.8)'
+        ],
+        borderColor: '#0077b6',
+        borderWidth: 1,
+        borderRadius: 12,
+        hoverBackgroundColor: '#0096c7'
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        title: {
+          display: true,
+          text: 'Peringkat Indeks Ekonomi Biru Indonesia (2024)',
+          color: '#023e8a',
+          font: { size: 18, weight: 'bold' }
+        },
+        legend: {
+          display: false
+        },
+        tooltip: {
+          backgroundColor: '#0077b6',
+          titleColor: '#ffffff',
+          bodyColor: '#ffffff',
+          callbacks: {
+            label: (context) => ` Skor: ${context.parsed.y}`
+          }
+        }
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Provinsi', color: '#03045e', font: { weight: 'bold' } },
+          ticks: { color: '#03045e' },
+          grid: { display: false }
+        },
+        y: {
+          title: { display: true, text: 'Skor Indeks (0–100)', color: '#03045e', font: { weight: 'bold' } },
+          ticks: { color: '#03045e' },
+          grid: { color: 'rgba(0, 119, 182, 0.1)' },
+          beginAtZero: true,
+          max: 100
+        }
+      },
+      animation: {
+        duration: 2000,
+        easing: 'easeOutBounce'
+      }
+    }
+  });
+
+  // Inisialisasi peta
+  const map = L.map('mapPeta').setView([-2.5, 118], 5);
+
+  // Tambahkan tile layer (peta dasar)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // === Marker Icon Biru ===
+  const blueIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+
+  // === Data 11 WPP (dummy realistis) ===
+  const dataWPP = [
+    {
+      kode: 'WPP 571',
+      nama: 'Selat Malaka',
+      provinsi: 'Aceh, Sumatera Utara',
+      produksi: 220,
+      dominan: 'Ikan Kembung',
+      pelabuhan: 'Pelabuhan Perikanan Belawan',
+      ekspor: 125,
+      lat: 3.9, lon: 98.6
+    },
+    {
+      kode: 'WPP 572',
+      nama: 'Samudera Hindia Barat Sumatera',
+      provinsi: 'Bengkulu, Sumatera Barat, Lampung',
+      produksi: 180,
+      dominan: 'Tuna Sirip Kuning',
+      pelabuhan: 'Pelabuhan Perikanan Bungus',
+      ekspor: 110,
+      lat: 1.5, lon: 96.8
+    },
+    {
+      kode: 'WPP 573',
+      nama: 'Samudera Hindia Selatan Jawa',
+      provinsi: 'Jawa Barat, Jawa Timur',
+      produksi: 260,
+      dominan: 'Cakalang',
+      pelabuhan: 'Pelabuhanratu',
+      ekspor: 145,
+      lat: -7.6, lon: 106.8
+    },
+    {
+      kode: 'WPP 711',
+      nama: 'Selat Karimata & Laut Natuna Utara',
+      provinsi: 'Kep. Riau, Kalimantan Barat',
+      produksi: 290,
+      dominan: 'Ikan Tenggiri',
+      pelabuhan: 'Pelabuhan Pontianak',
+      ekspor: 160,
+      lat: 3.0, lon: 108.0
+    },
+    {
+      kode: 'WPP 712',
+      nama: 'Laut Jawa',
+      provinsi: 'DKI Jakarta, Jawa Tengah, Kalimantan Selatan',
+      produksi: 310,
+      dominan: 'Ikan Teri',
+      pelabuhan: 'Pelabuhan Nizam Zachman',
+      ekspor: 200,
+      lat: -5.8, lon: 110.0
+    },
+    {
+      kode: 'WPP 713',
+      nama: 'Teluk Bone & Laut Flores',
+      provinsi: 'Sulawesi Selatan, NTT',
+      produksi: 320,
+      dominan: 'Cakalang',
+      pelabuhan: 'Pelabuhan Bitung',
+      ekspor: 210,
+      lat: -4.1, lon: 120.3
+    },
+    {
+      kode: 'WPP 714',
+      nama: 'Teluk Tolo & Laut Banda',
+      provinsi: 'Sulawesi Tenggara, Maluku',
+      produksi: 260,
+      dominan: 'Tongkol',
+      pelabuhan: 'Pelabuhan Ambon',
+      ekspor: 170,
+      lat: -4.7, lon: 125.3
+    },
+    {
+      kode: 'WPP 715',
+      nama: 'Teluk Tomini & Laut Maluku',
+      provinsi: 'Gorontalo, Sulawesi Utara',
+      produksi: 240,
+      dominan: 'Tuna Mata Besar',
+      pelabuhan: 'Pelabuhan Bitung',
+      ekspor: 190,
+      lat: 0.3, lon: 123.8
+    },
+    {
+      kode: 'WPP 716',
+      nama: 'Laut Halmahera & Laut Seram',
+      provinsi: 'Maluku Utara',
+      produksi: 270,
+      dominan: 'Cakalang',
+      pelabuhan: 'Pelabuhan Ternate',
+      ekspor: 130,
+      lat: 0.7, lon: 129.8
+    },
+    {
+      kode: 'WPP 717',
+      nama: 'Teluk Cendrawasih & Samudera Pasifik',
+      provinsi: 'Papua Barat',
+      produksi: 220,
+      dominan: 'Tuna Sirip Kuning',
+      pelabuhan: 'Pelabuhan Sorong',
+      ekspor: 175,
+      lat: -1.5, lon: 135.0
+    },
+    {
+      kode: 'WPP 718',
+      nama: 'Laut Aru, Laut Arafura, & Laut Timor',
+      provinsi: 'Papua, Maluku, NTT',
+      produksi: 400,
+      dominan: 'Udang Windu',
+      pelabuhan: 'Pelabuhan Merauke',
+      ekspor: 250,
+      lat: -6.8, lon: 135.3
+    }
+  ];
+
+  // === Tambahkan marker ke peta ===
+  dataWPP.forEach(d => {
+    const marker = L.marker([d.lat, d.lon], { icon: blueIcon }).addTo(map);
+
+    const popupContent = `
+      <div style="min-width:230px;">
+        <h4 style="color:#023e8a; margin-bottom:4px;">${d.kode} - ${d.nama}</h4>
+        <p><b>Provinsi:</b> ${d.provinsi}</p>
+        <p><b>Produksi:</b> ${d.produksi} ribu ton</p>
+        <p><b>Komoditas Dominan:</b> ${d.dominan}</p>
+        <p><b>Pelabuhan Utama:</b> ${d.pelabuhan}</p>
+        <p><b>Ekspor:</b> US$ ${d.ekspor} juta</p>
+      </div>
+    `;
+
+    marker.bindPopup(popupContent);
+
+    // Efek hover: buka popup otomatis
+    marker.on('mouseover', function() {
+      this.openPopup();
+    });
+    marker.on('mouseout', function() {
+      this.closePopup();
+    });
+  });
+  </script>
+
+   <!-- Footer -->
+    <footer id="kontak">
+      <div class="layar-dalam">
+        <div>
+          <h5>Kontak</h5>
+          Tim Developer & Data Analyst<br />
+          Jalan Ki Mas Jong No. 5, Kelurahan Kotabaru, Kecamatan/Kabupaten Serang, Jawa Barat.<br />
+          Email:SIPC.Cilegon@gmail.com
+        </div>
+        <div>
+          <h5>Tentang</h5>
+          SIPC menyediakan informasi perikanan tangkap dan data kelautan untuk mendukung keberlanjutan sumber daya laut.
+        </div>
+         <div>
+          <h5>Pengembang</h5>
+          Universitas Pendidikan Indonesia – Sistem Informasi Kelautan
+        </div>
+      </div>
+      <div class="layar-dalam">
+        <div class="copyright">&copy; 2025 SIPC - Sistem Informasi Perikanan Cilegon</div>
+      </div>
+    </footer>
+
+</body>
+</html>

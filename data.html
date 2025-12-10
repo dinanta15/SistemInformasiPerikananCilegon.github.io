@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data dan Peta Curah Hujan - SIPC</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigasi -->
+    <nav>
+      <div class="layar-dalam">
+        <div class="logo">
+          <a href="index.html"><img src="asset/logo-white.png" class="putih" /></a>
+        </div>
+        <div class="menu">
+          <a href="#" class="tombol-menu">
+            <span class="garis"></span><span class="garis"></span><span class="garis"></span>
+          </a>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="data.html" class="active">Data</a></li>
+            <li><a href="statistik.html">Statistik</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+       <!-- Hero Section -->
+<header id="home" style="position: relative; height: 100vh; overflow: hidden;">
+  <!-- Gambar Latar -->
+  <img src="asset/home.jpg" 
+       alt="Pemandangan Laut Kota Cilegon" 
+       style="width: 100%; height: 100%; object-fit: cover;">
+
+  <!-- Overlay -->
+  <div style="
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  "></div>
+
+  <!-- Teks Intro -->
+  <div class="intro" style="
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;">
+    <h3 style="font-size: 2rem; font-weight: bold; margin-bottom: 10px;">
+      Data Spasial dan Perikanan Kota Cilegon
+    </h3>
+    <p style="font-size: 1.1rem;">
+      Menampilkan data interaktif terkait produksi ikan tangkap dan budidaya, 
+  faktor lingkungan, serta analisis prediksi potensi hasil tangkapan.
+    </p>
+  </div>
+</header>
+
+<!-- Informasi Perikanan Cilegon -->
+<section class="info-section">
+  <div class="info-container">
+    <h2>Informasi Perikanan Tangkap dan Budidaya Kota Cilegon</h2>
+
+    <p>
+      Kota Cilegon, yang terletak di ujung barat Pulau Jawa dan berbatasan langsung dengan Selat Sunda, memiliki potensi perikanan laut yang cukup signifikan. Letaknya yang strategis di pesisir menjadikan kegiatan perikanan tangkap sebagai salah satu sumber mata pencaharian utama bagi masyarakat di wilayah pesisir seperti Kecamatan Ciwandan dan Citangkil.
+    </p>
+
+    <p>
+      Perikanan tangkap di Kota Cilegon didominasi oleh hasil tangkapan ikan pelagis seperti ikan tongkol, kembung, dan tembang. Jenis ikan ini banyak ditemukan di sekitar perairan Teluk Banten dan Selat Sunda karena dipengaruhi oleh arus laut yang membawa nutrien tinggi. Nelayan Cilegon umumnya menggunakan alat tangkap tradisional seperti jaring insang (gillnet), pancing ulur, dan bagan tancap. Produksi perikanan tangkap di wilayah ini berfluktuasi tergantung musim, kondisi cuaca, serta ketersediaan ikan di perairan sekitar.
+    </p>
+
+    <p>
+      Selain perikanan tangkap, sektor perikanan budidaya di Kota Cilegon juga menunjukkan perkembangan yang cukup menjanjikan. Budidaya ikan air tawar menjadi salah satu alternatif usaha bagi masyarakat non-pesisir, dengan komoditas unggulan seperti lele, nila, dan gurame. Beberapa kawasan di Cibeber dan Cilegon memiliki kolam-kolam budidaya yang dikelola secara mandiri oleh masyarakat maupun kelompok pembudidaya ikan (Pokdakan). Dukungan pemerintah melalui pelatihan, bantuan benih, dan pakan turut mendorong peningkatan produksi ikan budidaya lokal.
+    </p>
+
+    <p>
+      Namun, potensi besar ini tidak lepas dari tantangan. Kegiatan industri dan pelabuhan yang padat di Cilegon berpotensi menimbulkan pencemaran dan degradasi kualitas perairan. Selain itu, keterbatasan fasilitas pelabuhan perikanan, pendingin ikan, serta sarana pemasaran menjadi hambatan bagi nelayan dalam mempertahankan mutu hasil tangkapan. Untuk mengatasinya, diperlukan pengelolaan sumber daya perikanan yang berkelanjutan melalui pengawasan penangkapan, rehabilitasi lingkungan pesisir, serta penerapan teknologi ramah lingkungan.
+    </p>
+
+    <p>
+      Ke depan, pengembangan sektor perikanan di Kota Cilegon diarahkan pada peningkatan nilai tambah melalui diversifikasi produk, penguatan kelembagaan nelayan, serta penerapan digitalisasi data perikanan. Kolaborasi antara pemerintah, akademisi, dan masyarakat pesisir menjadi kunci untuk menjaga keberlanjutan ekosistem laut sekaligus meningkatkan kesejahteraan pelaku usaha perikanan. Dengan potensi perairan Selat Sunda yang melimpah, Cilegon memiliki peluang besar untuk menjadi salah satu sentra perikanan tangkap dan budidaya unggulan di wilayah Banten.
+    </p>
+  </div>
+</section>
+
+<main class="container">
+
+<!-- ========== PETA PERIKANAN CILEGON ========== -->
+<section class="map-section">
+  <div class="map-header">
+    <h2><i class="fa-solid fa-layer-group"></i> Peta Produksi Perikanan Kota Cilegon</h2>
+    <p>
+      Peta ini menampilkan distribusi volume produksi perikanan di Kota Cilegon selama periode lima tahun terakhir 
+      <b>(2019–2024)</b> berdasarkan data resmi dari <b>BPS Kota Cilegon</b>. 
+      Popup tiap kecamatan menampilkan tabel produksi perikanan tangkap dan budidaya 2019–2024.
+    </p>
+  </div>
+
+  <div id="map" style="height:500px; width: 80%; border-radius:12px; margin-top:20px;"></div>
+</section>
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+  // ==================== Inisialisasi Peta ====================
+  const map = L.map('map').setView([-6.01, 106.02], 11);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; OpenStreetMap'
+  }).addTo(map);
+
+  // ==================== Data Produksi per Tahun (2019–2024) ====================
+  // Semua data 2019 dikonversi dari kg → ton (÷1000)
+
+  const dataTahunanTangkap = {
+    Ciwandan:   {2019: 20.279, 2020: 9.093, 2021: 9.094, 2022: 29.895, 2023: 24.082, 2024:137.862},
+    Citangkil:  {2019: 55.885, 2020: 59.402, 2021: 53.039, 2022: 78.247, 2023: 80.641, 2024: 20.498},
+    Pulomerak:  {2019: 13.324, 2020:130.754, 2021:142.161, 2022:121.006, 2023:117.570, 2024: 57.980},
+    Purwakarta: {2019: 0, 2020:0, 2021:0, 2022:0, 2023:0, 2024:0},
+    Grogol:     {2019: 818.731, 2020:19.960, 2021:22.522, 2022:11.403, 2023:15.199, 2024:19.921},
+    Cilegon:    {2019: 0, 2020:0, 2021:0, 2022:0, 2023:0, 2024:0},
+    Jombang:    {2019: 0, 2020:0, 2021:0, 2022:0, 2023:0, 2024:0},
+    Cibeber:    {2019: 2.465, 2020: 2.465, 2021:0, 2022:0, 2023:0, 2024:0}
+  };
+
+  const dataTahunanBudidaya = {
+    Ciwandan:   {2019:18.130, 2020:25.000, 2021:22.080, 2022:43.127, 2023:46.743, 2024:35.470},
+    Citangkil:  {2019:21.445, 2020:26.700, 2021:26.455, 2022:29.513, 2023:21.241, 2024:25.355},
+    Pulomerak:  {2019:12.227, 2020:18.809, 2021:8.815, 2022:11.934, 2023:13.486, 2024:12.862},
+    Purwakarta: {2019:20.770, 2020:25.861, 2021:43.092, 2022:73.145, 2023:73.863, 2024:52.621},
+    Grogol:     {2019:8.695, 2020:19.000, 2021:7.976, 2022:16.441, 2023:12.655, 2024:14.353},
+    Cilegon:    {2019:31.149, 2020:37.300, 2021:44.718, 2022:44.927, 2023:52.688, 2024:48.955},
+    Jombang:    {2019:67.511, 2020:42.925, 2021:70.562, 2022:94.638, 2023:93.534, 2024:112.185},
+    Cibeber:    {2019:39.629, 2020:34.500, 2021:38.294, 2022:51.508, 2023:54.222, 2024:59.946}
+  };
+
+  // ==================== Data Kecamatan ====================
+  const dataKecamatan = {
+    Ciwandan:    { lat: -6.02, lon: 105.97, luas: "33,38 Km²", img:"asset/kembung.jpg" },
+    Citangkil:   { lat: -6.01, lon: 106.01, luas: "25,89 Km²", img:"asset/tongkol.jpg" },
+    Cilegon:     { lat: -6.02, lon: 106.05, luas: "8,21 Km²", img:"asset/lele.jpg" },
+    Cibeber:     { lat: -6.04, lon: 106.05, luas: "18,80 Km²", img:"asset/nila.jpg" },
+    Purwakarta:  { lat: -5.98, lon: 106.05, luas: "16,61 Km²", img:"asset/purwakarta.png" },
+    Grogol:      { lat: -5.97, lon: 106.01, luas: "23,84 Km²", img:"asset/grogol.png" },
+    Pulomerak:   { lat: -5.91, lon: 106.01, luas: "26,41 Km²", img:"asset/Pulomerak.png" },
+    Jombang:     { lat: -6.00, lon: 106.06, luas: "10,32 Km²", img:"asset/jombang.png" },
+  };
+
+  // ==================== Marker Layer ====================
+  const layerTangkap = L.layerGroup();
+  const layerBudidaya = L.layerGroup();
+
+  const blueIcon = new L.Icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+    shadowSize: [41, 41]
+  });
+
+  // ==================== Membuat Marker ====================
+  Object.keys(dataKecamatan).forEach(kec => {
+    const d = dataKecamatan[kec];
+
+    // --------- Popup Tangkap ---------
+    const markerTangkap = L.marker([d.lat, d.lon], { icon: blueIcon })
+      .bindPopup(`
+        <div style="text-align:center;">
+          <h4>${kec}</h4>
+          
+          <p><b>🎣 Produksi Ikan Tangkap</b></p>
+          <p><b>Luas:</b> ${d.luas}</p>
+          <table style="width:100%; font-size:13px;">
+            <tr><th>Tahun</th><th>Produksi (Kg)</th></tr>
+            ${Object.keys(dataTahunanTangkap[kec]).map(t => `
+              <tr><td>${t}</td><td>${dataTahunanTangkap[kec][t].toFixed(3)}</td></tr>
+            `).join('')}
+          </table>
+        </div>
+      `);
+
+    // --------- Popup Budidaya ---------
+    const markerBudidaya = L.marker([d.lat, d.lon], { icon: blueIcon })
+      .bindPopup(`
+        <div style="text-align:center;">
+          <h4>${kec}</h4>
+          
+          <p><b>🐟 Produksi Budidaya</b></p>
+          <p><b>Luas:</b> ${d.luas}</p>
+          <table style="width:100%; font-size:13px;">
+            <tr><th>Tahun</th><th>Produksi (ton)</th></tr>
+            ${Object.keys(dataTahunanBudidaya[kec]).map(t => `
+              <tr><td>${t}</td><td>${dataTahunanBudidaya[kec][t].toFixed(3)}</td></tr>
+            `).join('')}
+          </table>
+        </div>
+      `);
+
+    markerTangkap.addTo(layerTangkap);
+    markerBudidaya.addTo(layerBudidaya);
+  });
+
+  layerTangkap.addTo(map);
+
+  // ==================== Layer Switch Panel ====================
+  const LayerToggle = L.Control.extend({
+    options: { position: 'topright' },
+    onAdd: function () {
+      const container = L.DomUtil.create('div', 'layer-toggle-btn');
+      container.innerHTML = '<i class="fa-solid fa-layer-group"></i>';
+      L.DomEvent.disableClickPropagation(container);
+      L.DomEvent.on(container, 'click', function () {
+        const panel = map.getContainer().querySelector('.layer-panel');
+        if (panel) panel.classList.toggle('active');
+      });
+      return container;
+    }
+  });
+  map.addControl(new LayerToggle());
+
+  const panel = L.DomUtil.create('div', 'layer-panel');
+  panel.innerHTML = `
+    <h4><i class="fa-solid fa-water"></i> Pilih Layer</h4>
+    <button id="layer-tangkap" class="layer-option active"><span class="dot" style="background:#0077b6"></span>Ikan Tangkap</button>
+    <button id="layer-budidaya" class="layer-option"><span class="dot" style="background:#2a9d8f"></span>Budidaya</button>
+  `;
+  map.getContainer().appendChild(panel);
+  L.DomEvent.disableClickPropagation(panel);
+
+  function showLayer(activeLayer, activeId) {
+    map.removeLayer(layerTangkap);
+    map.removeLayer(layerBudidaya);
+    activeLayer.addTo(map);
+    panel.querySelectorAll('.layer-option').forEach(b => b.classList.remove('active'));
+    panel.querySelector('#' + activeId).classList.add('active');
+    panel.classList.remove('active');
+  }
+
+  panel.querySelector('#layer-tangkap').addEventListener('click', () => showLayer(layerTangkap, 'layer-tangkap'));
+  panel.querySelector('#layer-budidaya').addEventListener('click', () => showLayer(layerBudidaya, 'layer-budidaya'));
+
+</script>
+
+
+<!-- ===============================
+   ANALISIS DATA PERIKANAN CILEGON
+================================-->
+<section class="data-analysis-section">
+
+  <!-- 1. Grafik Tren Produksi Tahunan -->
+  <div class="data-card">
+    <h2><i class="fa-solid fa-chart-line"></i> Grafik Tren Total Produksi Per Tahun</h2>
+    <p>
+      Grafik ini menampilkan perkembangan total produksi perikanan tangkap dan budidaya Kota Cilegon selama 5 tahun terakhir berdasarkan data BPS. 
+      Tren ini membantu memahami pola kenaikan atau penurunan produksi dari waktu ke waktu.
+    </p>
+
+    <canvas id="grafikProduksi" style="max-width: 100%; margin-top: 20px;"></canvas>
+
+    <p><b>📌 Informasi Singkat Produksi Perikanan (2019–2024)</b></p>
+    <p>- 2019: Produksi budidaya melonjak sangat besar, menjadi titik awal peningkatan sektor perikanan.</p>
+    <p>- 2020–2024: Produksi tangkap dan budidaya meningkat dengan pola fluktuatif.</p>
+  </div>
+
+  <!-- 2. Top 5 Wilayah Produksi Tertinggi -->
+  <div class="data-card">
+    <h2><i class="fa-solid fa-ranking-star"></i> Top 5 Wilayah Produksi Perikanan Tertinggi</h2>
+    <p>
+      Daftar berikut menunjukkan 5 kecamatan dengan kontribusi produksi terbesar (2019-2024)
+    </p>
+
+    <div class="grafik-row">
+    <canvas id="grafikBudidaya" width="400" height="250"></canvas>
+    <canvas id="grafikTangkap" width="400" height="250"></canvas>
+    </div>
+    <p><b>📝 Deskripsi Singkat Grafik Budidaya & Tangkap</b></p>
+    <p><b>📘 Grafik Produksi Perikanan Budidaya</b></p>
+    <p>Grafik ini menampilkan lima kecamatan dengan produksi budidaya tertinggi di Kota Cilegon. Jombang menjadi penyumbang terbesar, diikuti Purwakarta dan Cibeber. Data ini menunjukkan bahwa sektor budidaya terpusat pada wilayah dengan fasilitas kolam dan lahan pendukung yang lebih luas.</p>
+    <p><b>📗 Grafik Produksi Perikanan Tangkap</b></p>
+    <p>Grafik ini memperlihatkan kontribusi produksi perikanan tangkap di lima wilayah utama. Pulomerak mendominasi produksi karena berlokasi dekat perairan Selat Sunda dan pelabuhan aktif. Citangkil dan Ciwandan menempati urutan berikutnya dengan produksi moderat.</p>
+  </div>
+
+  <!-- 3. Perbandingan data aktual vs prediksi -->
+  <div class="data-card">
+    <h2><i class="fa-solid fa-fish"></i> Perbandingan Data Produksi Aktual dan Prediksi Untuk Ikan Tangkap</h2>
+    <p>
+      Grafik ini menunjukkan data hasil pengolahan menggunakan beberapa parameter yaitu hasil tangkapan dalam 10 tahun, suhu permukaan laut (SPL), dan klorofil-a .
+    </p>
+    <canvas id="perbandinganChart" style="max-width: 100%; margin-top: 20px;"></canvas>
+    <p><b>⚖️ Deskripsi Hasil Prediksi Model</b></p>
+    <p>🔍 Model prediksi produksi ikan tangkap yang telah dilatih (menggunakan Random Forest) menunjukkan performa yang optimal, ditandai dengan selisih yang relatif kecil antara nilai prediksi dan data aktual pada periode 2019–2024. Pola tren yang dihasilkan model juga mengikuti pergerakan data sebenarnya secara konsisten, sehingga memberikan tingkat kepercayaan yang baik terhadap akurasinya.</p>
+    <p>📊 Berdasarkan hasil prediksi untuk tahun 2025–2029, model memperkirakan bahwa produksi ikan tidak akan mengalami perubahan drastis dan cenderung stabil mengikuti pola historis sebelumnya. Dengan demikian, prediksi ini dapat dijadikan acuan awal dalam melihat potensi produksi perikanan tangkap beberapa tahun ke depan.</p>
+  </div>
+
+  <section class="urgensi-perikanan">
+  <h2>Urgensi Produksi Perikanan Tangkap dan Budidaya di Cilegon</h2>
+
+  <p>
+    Analisis lima tahun terakhir menunjukkan bahwa produksi perikanan di Kota Cilegon memiliki beberapa isu penting yang perlu diperhatikan 
+    untuk pengembangan sektor perikanan secara berkelanjutan.
+  </p>
+
+  <h4>1. Ketidakseimbangan Produksi</h4>
+  <p>
+    Produksi budidaya mendominasi total produksi, sementara produksi ikan tangkap sangat rendah dan hanya terpusat pada beberapa kecamatan pesisir.
+    Kondisi ini menunjukkan perlunya diversifikasi sumber produksi untuk mengurangi ketergantungan pada sektor budidaya.
+  </p>
+
+  <h4>2. Tekanan Lingkungan Tinggi</h4>
+  <p>
+    Perairan Cilegon berada di kawasan industri sehingga lebih rentan terhadap penurunan kualitas air dan tingginya kekeruhan.
+    Hal ini berdampak pada rendahnya klorofil-a dan kesuburan perairan, yang berpengaruh langsung terhadap produksi tangkap.
+  </p>
+
+  <h4>3. Produksi Tidak Merata Antar Kecamatan</h4>
+  <p>
+    Produksi tertinggi hanya terjadi di kecamatan tertentu seperti Pulomerak (tangkap) dan Cibeber/Jombang (budidaya).
+    Banyak wilayah belum berkontribusi optimal sehingga perlu strategi pengembangan berbasis potensi lokal.
+  </p>
+
+  <h4>4. Tren Produksi Tidak Stabil</h4>
+  <p>
+    Produksi budidaya meningkat, tetapi produksi tangkap tidak menunjukkan tren yang konsisten. 
+    Variasi yang besar ini menjadi indikator kurang stabilnya sistem produksi perikanan lokal.
+  </p>
+
+  <h4>5. Faktor Oseanografi yang Kurang Mendukung</h4>
+  <p>
+    Suhu permukaan laut yang cenderung stabil, rendahnya klorofil-a, dan tingginya aktivitas kapal membuat perairan Cilegon 
+    kurang mendukung konsentrasi ikan, sehingga hasil tangkapan menjadi lebih sedikit dibanding wilayah di Selat Sunda.
+  </p>
+
+  <p><strong>Kesimpulan:</strong> 
+    Data menunjukkan bahwa sektor perikanan Cilegon membutuhkan penguatan kebijakan lingkungan, peningkatan kapasitas nelayan, 
+    dan optimalisasi potensi kecamatan untuk mendorong produksi yang lebih merata dan berkelanjutan.
+  </p>
+</section>
+
+
+</section>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+// ==================== DATA PRODUKSI PER TAHUN ====================
+const tahun = ["2019", "2020", "2021", "2022", "2023", "2024"];
+
+const produksiBudidayaTahunan = [
+  154555.99, 230095.00, 261992.00, 365233.00, 368432.00, 361747.00
+];
+
+const produksiTangkapTahunan = [
+  234079, 221674.00, 226816.00, 240551.00, 237492.00, 236261.00
+];
+
+// ========= 1. GRAFIK TREN PRODUKSI TAHUNAN ==========
+new Chart(document.getElementById("grafikProduksi"), {
+  type: "line",
+  data: {
+    labels: tahun,
+    datasets: [
+      {
+        label: "Budidaya (Kg)",
+        data: produksiBudidayaTahunan,
+        borderColor: "#0077b6",
+        fill: false,
+        borderWidth: 3,
+        tension: 0.3
+      },
+      {
+        label: "Tangkap (Kg)",
+        data: produksiTangkapTahunan,
+        borderColor: "#2ca02c",
+        fill: false,
+        borderWidth: 3,
+        tension: 0.3
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    plugins: { legend: { position: "top" } }
+  }
+});
+
+// ===========================
+// 2. DATA TOP 5 WILAYAH
+// ===========================
+const wilayahBudidaya = ["Jombang", "Purwakarta", "Cibeber", "Cilegon", "Ciwandan"];
+const produksiBudidayaWilayah = [420000, 310000, 240000, 230000, 180000];
+
+const wilayahTangkap = ["Pulomerak", "Citangkil", "Ciwandan", "Grogol", "Cibeber"];
+const produksiTangkapWilayah = [570000, 290000, 210000, 90000, 10000];
+
+// ========== GRAFIK BUDIDAYA ==========
+new Chart(document.getElementById("grafikBudidaya"), {
+  type: "bar",
+  data: {
+    labels: wilayahBudidaya,
+    datasets: [{
+      label: "Produksi Budidaya (Kg)",
+      data: produksiBudidayaWilayah,
+      backgroundColor: "#1f77b4"
+    }]
+  },
+  options: { indexAxis: "y", responsive: true }
+});
+
+// ========== GRAFIK TANGKAP ==========
+new Chart(document.getElementById("grafikTangkap"), {
+  type: "bar",
+  data: {
+    labels: wilayahTangkap,
+    datasets: [{
+      label: "Produksi Tangkap (Kg)",
+      data: produksiTangkapWilayah,
+      backgroundColor: "#2ca02c"
+    }]
+  },
+  options: { indexAxis: "y", responsive: true }
+});
+
+// ========== 3. GRAFIK PERBANDINGAN PREDIKSI VS AKTUAL ==========
+
+// Data prediksi
+const tahunPrediksi = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029];
+const prediksiRF = [235294, 221600, 227400, 240600, 238105, 237010, 240800, 241050, 242200, 241300, 241100];
+
+// Data aktual
+const tahunAktual = [2019, 2020, 2021, 2022, 2023, 2024];
+const produksiAktual = [234079, 221674.00, 226816.00, 240551.00, 237492.00, 236261.00];
+
+// Grafik final
+new Chart(document.getElementById("perbandinganChart"), {
+    type: 'line',
+    data: {
+        labels: tahunPrediksi,
+        datasets: [
+            {
+                label: "Prediksi RandomForest ",
+                data: prediksiRF,
+                borderColor: "#2ca02c",
+                backgroundColor: "#2ca02c",
+                borderWidth: 3,
+                tension: 0.3,
+                pointRadius: 4
+            },
+            {
+                type: "scatter",
+                label: "Aktual (2019–2024)",
+                data: tahunAktual.map((t,i)=>({x:t,y:produksiAktual[i]})),
+                borderColor: "blue",
+                backgroundColor: "blue",
+                pointStyle: "cross",
+                pointRadius: 13
+            }
+        ]
+    },
+    options: { responsive: true }
+});
+</script>
+
+     <!-- Footer -->
+    <footer id="kontak">
+      <div class="layar-dalam">
+        <div>
+          <h5>Kontak</h5>
+          Tim Developer & Data Analyst<br />
+          Jalan Ki Mas Jong No. 5, Kelurahan Kotabaru, Kecamatan/Kabupaten Serang, Jawa Barat.<br />
+          Email: SIPC.Cilegon@gmail.com
+        </div>
+        <div>
+          <h5>Tentang</h5>
+          SIPC menyediakan informasi perikanan tangkap dan data kelautan untuk mendukung keberlanjutan sumber daya laut.
+        </div>
+         <div>
+          <h5>Pengembang</h5>
+          Universitas Pendidikan Indonesia – Sistem Informasi Kelautan
+        </div>
+      </div>
+      <div class="layar-dalam">
+        <div class="copyright">&copy; 2025 SIPC - Sistem Informasi Perikanan Cilegon</div>
+      </div>
+    </footer>
